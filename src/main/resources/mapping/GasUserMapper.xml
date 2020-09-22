@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lianfu.gasserversys.mapper.GasUserMapper">
+  <insert id="SetUser" parameterType="com.lianfu.gasserversys.mode.GasUser">
+      insert  into gasuser(cid,phone,duty_name,username,password,role_code,Inputdate) values(#{cid},#{phone},#{duty_name},#{username},#{password},#{role_code},#{Inputdate})
+  </insert>
+
+  <select id="GetUserUid" parameterType="java.lang.String" resultType="int">
+      select  uid from GasUser where username=#{username}
+
+  </select>
+
+  <select id="GetUserWherUsername" parameterType="java.lang.String" resultType="java.lang.String">
+       select username from gasuser where  username=#{username}
+  </select>
+
+
+
+
+
+  <select id="GetUserAll">
+       select uid,name,username,passward,ustauts,appid from gasuser
+  </select>
+
+
+
+</mapper>

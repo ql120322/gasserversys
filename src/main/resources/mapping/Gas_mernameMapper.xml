@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lianfu.gasserversys.mapper.Gas_mernameMapper">
+    <insert id="SetMer" parameterType="java.lang.String">
+        insert  into gas_mername(mername) values(#{mername})
+    </insert>
+
+    <select id="GetMer" parameterType="java.lang.String" resultType="com.lianfu.gasserversys.mode.Gas_mername">
+        select cid,mername from Gas_mername where mername=#{mername}
+    </select>
+
+
+   <select id="GetMerAll"  resultType="com.lianfu.gasserversys.mode.Gas_mername">
+       select cid,mername from Gas_mername
+   </select>
+
+
+
+
+</mapper>
